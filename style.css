@@ -11,7 +11,8 @@ body {
 }
 
 .container {
-    margin: 12%;
+    margin: 6% 12% 0 12%;
+    ;
     width: 90%;
     max-width: 700px;
 }
@@ -19,16 +20,19 @@ body {
 .container h1 {
     font-size: 48px;
     font-weight: 500;
+    min-width: 400px;
+    margin-bottom: 50px;
 }
 
 .container h1 span {
     color: #019f55;
     border-bottom: 4px solid #019f55;
- }
+}
 
 .box {
     width: 100%;
-    margin-top: 50px;
+    min-width: min-content;
+    margin-top: 35px;
     margin-bottom: 30px;
     background-color: #fff;
     color: green;
@@ -39,7 +43,7 @@ body {
     border-radius: 5px;
 }
 
-#copy-icon{
+#copy-icon {
     font-size: 48px;
     font-weight: 600;
     cursor: pointer;
@@ -64,6 +68,7 @@ body {
     padding: 16px 26px;
     border-radius: 5px;
     cursor: pointer;
+    min-width: 224px;
 }
 
 #bolt-icon {
@@ -71,3 +76,102 @@ body {
     font-weight: 500;
 }
 
+/*
+Toggle Button Teste
+*/
+
+.toggleButton {
+    background-color: #d2d2d2;
+    width: 70px;
+    height: 20px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.toggleButton::before {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-top: -7px;
+    transition: 0.2s;
+}
+
+.checkbox:checked+.toggleButton {
+    background-color: #01db75;
+}
+
+.checkbox:checked+.toggleButton::before {
+    background-color: #00b963;
+    transform: translateX(35px);
+}
+
+.checkbox {
+    display: none;
+}
+
+.opcoes-paragrafo {
+    position: relative;
+}
+
+.opcoes-paragrafo::after {
+    position: absolute;
+    content: '|';
+    font-size: 16px;
+    right: -10px;
+}
+
+#expand-more {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.botao-opcoes {
+    display: flex;
+    margin-bottom: 20px;
+    color: #d2d2d2;
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 300;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opcoes.ativo>.botao-opcoes>#expand-more {
+    transform: rotate(-180deg);
+}
+
+.menu-opcoes {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.25em;
+    background-color: #ffffff40;
+    padding: 2em .5em;
+    border-radius: 25px;
+}
+
+.item-opcoes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.opcoes.ativo>.menu-opcoes {
+    display: grid;
+}
+
+.box-toggleButton {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-self: center;
+}

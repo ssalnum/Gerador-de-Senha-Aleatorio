@@ -19,12 +19,53 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <div class="container">
-        <h1>Gerar <br> <span>Senha Aleatória</span></h1>
-        
+        <h1>Gerar uma <br> <span>Senha Aleatória</span></h1>
+        <div class="opcoes">
+            <div class="botao-opcoes">
+                <p class="opcoes-paragrafo">Opções</p>
+                <span class="material-symbols-outlined" id="expand-more">
+                    expand_more
+                </span>
+            </div>
+
+            <ul class="menu-opcoes" border-radius: 25px;>
+                <li class="item-opcoes">
+                    <p>Incluir letras minúsculas?</p>
+                    <div class="box-toggleButton">
+                        <input type="checkbox" id="check-1" class="checkbox" />
+                        <label for="check-1" class="toggleButton"></label>
+                    </div>
+                </li>
+                <li class="item-opcoes">
+                    <p>Incluir letras maiúsculas?</p>
+                    <div class="box-toggleButton">
+                        <input type="checkbox" id="check-2" class="checkbox" />
+                        <label for="check-2" class="toggleButton"></label>
+                    </div>
+                </li>
+                <li class="item-opcoes">
+                    <p>Incluir números?</label>
+                    <div class="box-toggleButton">
+                        <input type="checkbox" id="check-3" class="checkbox" />
+                        <label for="check-3" class="toggleButton"></label>
+                    </div>
+                </li>
+                <li class="item-opcoes">
+                    <p>Incluir caracteres especiais?</p>
+                    <div class="box-toggleButton">
+                        <input type="checkbox" id="check-4" class="checkbox" />
+                        <label for="check-4" class="toggleButton"></label>
+                    </div>
+                </li>
+        </div>
+        </ul>
+
         <div class="box">
             <input type="text" id="input-senha" placeholder="Senha">
             <span class="material-symbols-outlined" id="copy-icon">
