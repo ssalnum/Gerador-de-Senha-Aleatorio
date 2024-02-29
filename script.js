@@ -50,6 +50,10 @@ const toggleLetrasMaiusculas = document.getElementById("check-2")
 const toggleNumeros = document.getElementById("check-3")
 const toggleCaracteresEspeciais = document.getElementById("check-4")
 
+const botaoTema = document.getElementById("tema");
+
+const botaoMostrarSenha = document.getElementById("visibility-icon");
+
 botaoOpcoes.addEventListener("click", () => opcoes.classList.toggle("ativo"))
 
 let incluirLetrasMinusculas = true;
@@ -69,9 +73,6 @@ toggleCaracteresEspeciais.addEventListener("change", () => incluirCaracteresEspe
 
 botaoGerarSenha.addEventListener("click", () => gerarSenha(incluirLetrasMinusculas, incluirLetrasMaiusculas, incluirNumeros, incluirCaracteresEspeciais))
 botaoCopiar.addEventListener("click", copiarSenha)
-
-const botaoTema = document.getElementById("tema");
-
 
 if(localStorage.getItem("tema") == null){
     localStorage.setItem("tema", "dark");
@@ -97,4 +98,12 @@ botaoTema.addEventListener("click", ()=> {
     }
 })
 
-
+botaoMostrarSenha.addEventListener("click", ()=> {
+    if(botaoMostrarSenha.innerHTML == "visibility"){
+        botaoMostrarSenha.innerHTML = "visibility_off";
+        inputSenha.type = "text";
+    }else{
+        botaoMostrarSenha.innerHTML = "visibility";
+        inputSenha.type = "password";
+    }
+})
