@@ -70,4 +70,15 @@ toggleCaracteresEspeciais.addEventListener("change", () => incluirCaracteresEspe
 botaoGerarSenha.addEventListener("click", () => gerarSenha(incluirLetrasMinusculas, incluirLetrasMaiusculas, incluirNumeros, incluirCaracteresEspeciais))
 botaoCopiar.addEventListener("click", copiarSenha)
 
+const botaoTema = document.getElementById("tema");
+
+botaoTema.addEventListener("click", ()=> {
+    document.body.classList.toggle("light-theme")
+    if(document.body.classList.contains("light-theme")){
+        botaoTema.innerHTML = "light_mode"
+    }else{
+        botaoTema.innerHTML = "dark_mode"
+    }
+})
+
 
