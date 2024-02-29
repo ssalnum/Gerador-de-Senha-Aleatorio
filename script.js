@@ -72,12 +72,28 @@ botaoCopiar.addEventListener("click", copiarSenha)
 
 const botaoTema = document.getElementById("tema");
 
+
+if(localStorage.getItem("tema") == null){
+    localStorage.setItem("tema", "dark");
+}
+
+let temaLocalStorage = localStorage.getItem("tema")
+
+if(temaLocalStorage == "dark"){
+    botaoTema.innerHTML = "light_mode"
+}else if (temaLocalStorage == "light"){
+    botaoTema.innerHTML = "dark_mode"
+    document.body.classList.add("light-theme")
+}
+
 botaoTema.addEventListener("click", ()=> {
     document.body.classList.toggle("light-theme")
     if(document.body.classList.contains("light-theme")){
-        botaoTema.innerHTML = "light_mode"
+        botaoTema.innerHTML = "light_mode";
+        localStorage.setItem("tema", "light");
     }else{
         botaoTema.innerHTML = "dark_mode"
+        localStorage.setItem("tema", "dark");
     }
 })
 
